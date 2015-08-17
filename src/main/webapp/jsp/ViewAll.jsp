@@ -29,6 +29,7 @@ String passwd = prop.getProperty("dbpassword");
 String keyword=request.getParameter("searchbox");
 Class.forName("com.mysql.jdbc.Driver");
 Connection con = DriverManager.getConnection(dburl,user,passwd);
+System.out.println("Connection successful with " + dburl + ";" +user+ ";" + passwd);
 PreparedStatement stat1 = con.prepareStatement("SELECT * FROM EMPLOYEE,STAGE WHERE employee.stageid=stage.stageid ");
 ResultSet result=stat1.executeQuery();
 
