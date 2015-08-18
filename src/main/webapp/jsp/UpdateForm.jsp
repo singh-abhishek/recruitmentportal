@@ -49,7 +49,8 @@
 <h1 align="center" >Update Required Fields</h1>
 <%
 Properties prop = new Properties();
-InputStream input = new FileInputStream("/Recruitment Portal/config.properties");
+String configFilePath = application.getRealPath("/")+"configuration/config.properties";
+InputStream input = new FileInputStream(configFilePath);
 prop.load(input);
 String dburl = prop.getProperty("database");
 String user = prop.getProperty("dbuser");

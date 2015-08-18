@@ -21,7 +21,8 @@
 <%
 
 Properties prop = new Properties();
-InputStream input = new FileInputStream("/Recruitment Portal/config.properties");
+String configFilePath = application.getRealPath("/")+"configuration/config.properties";
+InputStream input = new FileInputStream(configFilePath);
 prop.load(input);
 String dburl = prop.getProperty("database");
 String user = prop.getProperty("dbuser");
@@ -29,7 +30,6 @@ String passwd = prop.getProperty("dbpassword");
 String keyword=request.getParameter("searchbox");
 Class.forName("com.mysql.jdbc.Driver");
 Connection con = DriverManager.getConnection(dburl,user,passwd);
-System.out.println("Connection successful with " + dburl + ";" +user+ ";" + passwd);
 PreparedStatement stat1 = con.prepareStatement("SELECT * FROM EMPLOYEE,STAGE WHERE employee.stageid=stage.stageid ");
 ResultSet result=stat1.executeQuery();
 
