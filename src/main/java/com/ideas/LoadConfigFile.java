@@ -14,7 +14,7 @@ public class LoadConfigFile {
 	 
 		try {
 	 
-			input = new FileInputStream("/Recruitment Portal/config.properties");
+			input = this.getClass().getClassLoader().getResourceAsStream("config.properties");
 	 
 			// load a properties file
 			prop.load(input);
@@ -48,7 +48,7 @@ public class LoadConfigFile {
 	 
 		try {
 	 
-			input = new FileInputStream("/Recruitment Portal/config.properties");
+			input = this.getClass().getClassLoader().getResourceAsStream("config.properties");
 	 
 			// load a properties file
 			prop.load(input);
@@ -82,7 +82,7 @@ public class LoadConfigFile {
 	 
 		try {
 	 
-			input = new FileInputStream("/Recruitment Portal/config.properties");
+			input = this.getClass().getClassLoader().getResourceAsStream("config.properties");
 	 
 			// load a properties file
 			prop.load(input);

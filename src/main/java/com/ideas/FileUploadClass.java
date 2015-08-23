@@ -13,7 +13,7 @@ public class FileUploadClass {
 	public static boolean processFile(String path, FileItemStream item ,int Uniqueid){
 		try{
 			Properties prop = new Properties();
-			InputStream input = new FileInputStream("/Recruitment Portal/config.properties");
+			InputStream input = FileUploadClass.class.getClassLoader().getResourceAsStream("config.properties");
 			prop.load(input);
 			String resumepath = prop.getProperty("resumeconfig");
 			File f=new File(resumepath); 

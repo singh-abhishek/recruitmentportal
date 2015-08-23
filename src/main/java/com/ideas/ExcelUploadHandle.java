@@ -10,10 +10,10 @@ import org.apache.commons.fileupload.FileItemStream;
 
 public class ExcelUploadHandle {
 	static String rqPath3;
-	public static boolean processFile(String path, FileItemStream item){
+	public boolean processFile(String path, FileItemStream item){
 		try{
 			Properties prop = new Properties();
-			InputStream input = new FileInputStream("/Recruitment Portal/config.properties");
+			InputStream input = this.getClass().getClassLoader().getResourceAsStream("config.properties");
 			prop.load(input);
 			String excelpath = prop.getProperty("excelconfig");
 			File f=new File(excelpath); 

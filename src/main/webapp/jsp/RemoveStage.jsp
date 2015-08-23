@@ -24,7 +24,7 @@
 
 <%
 Properties prop = new Properties();
-String configFilePath = application.getRealPath("/")+"configuration/config.properties";
+String configFilePath = application.getRealPath("/")+"config.properties";
 InputStream input = new FileInputStream(configFilePath);
 prop.load(input);
 String dburl = prop.getProperty("database");
